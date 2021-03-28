@@ -13,6 +13,7 @@ const Counter = (props) => {
   );
 };
 
+
 const mapStateToProps = (state) => {
   const { value } = state;
   return {
