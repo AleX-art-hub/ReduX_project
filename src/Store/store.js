@@ -1,21 +1,28 @@
+import { createStore } from 'redux';
+import ACTION_TYPES from '../actions/actionsType.js';
+
+
 const initialState = {
   value: 0,
+  step: 1,
 };
 
 // !!!! все значения состояний меняются в редюсере
 const reducer = (prevState = initialState, action) => {
-  if (action.type === ACTION_TYPES.COUNTER_INCREMENT) {
-    return {
-      value: prevState.value + 1,
-    };
-  } else if (action.type === ACTION_TYPES.COUNTER_DECREMENT) {
-    return {
-      value: prevState.value - 1,
-    };
-  } else {
-    return prevState;
-  }
-  return prevState;
+  switch (action.type){
+      case ACTION_TYPES.COUNTER_INCREMENT:
+        return {
+            ...state,
+            value: state.value + state.step,    
+        };
+        case ACTION_TYPES.COUNTER_DECREMENT:
+        return{
+            ...state,
+            value: state.value - state.step,
+        };
+        default:
+            return state;
+    }
 };
 
 const store = createStore(reducer);
