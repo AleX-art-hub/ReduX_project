@@ -1,7 +1,3 @@
-import {createStore} from 'redux';
-import ACTION_TYPES from '../../Actions/actionsType.js';
-
-
 const initialState = {
   value: 0,
 };
