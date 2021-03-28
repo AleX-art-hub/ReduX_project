@@ -1,14 +1,11 @@
-import { createStore } from 'redux';
-import ACTION_TYPES from '../actions/actionsType.js';
-
-
+import ACTION_TYPES from '../actions/actionsType';
 const initialState = {
   value: 0,
   step: 1,
 };
 
 // !!!! все значения состояний меняются в редюсере
-const reducer = (prevState = initialState, action) => {
+export default function counterReducer (state = initialState, action) => {
   switch (action.type){
       case ACTION_TYPES.COUNTER_INCREMENT:
         return {
@@ -23,8 +20,5 @@ const reducer = (prevState = initialState, action) => {
         default:
             return state;
     }
-};
+}
 
-const store = createStore(reducer);
-
-export default store;

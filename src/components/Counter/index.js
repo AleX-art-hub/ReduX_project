@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ACTIONS_TYPES from '../../Actions/actionsType.js';
-import ACTION_TYPES from '../../Actions/actionsType.js';
+import ACTION_TYPES from '../../actions/actionsType.js';
+import ACTIONS_TYPES from '../../actions/actionsType.js';
 
 const Counter = (props) => {
   return (
